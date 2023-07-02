@@ -1,0 +1,29 @@
+% Saved by Prover9-Mace4 Version 0.5, December 2007.
+
+set(ignore_option_dependencies). % GUI handles dependencies
+
+if(Prover9). % Options for Prover9
+  assign(max_seconds, 60).
+end_if.
+
+if(Mace4).   % Options for Mace4
+  assign(max_seconds, 60).
+end_if.
+
+formulas(assumptions).
+
+Memberofcorona(Nikos)&Memberofcorona(Kyriakos)&Memberofcorona(Alexis).
+all x (Memberofcorona(x)&-Right(x)->Liberal(x)).
+all x (Right(x)->-Likes(x,socialism)).
+all x (-Likes(x,capitalism)->-Liberal(x)).
+all x (Likes(Kyriakos,x)<->-Likes(Alexis,x))&all y(-Likes(Kyriakos,y)<->Likes(Alexis,y)).
+Likes(Alexis,socialism)&Likes(Alexis,capitalism).
+
+end_of_list.
+
+formulas(goals).
+
+exists x (Memberofcorona(x)&Liberal(x)&-Right(x)).
+
+end_of_list.
+

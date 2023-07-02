@@ -1,0 +1,31 @@
+============================== prooftrans ============================
+Prover9 (32) version Dec-2007, Dec 2007.
+Process 17000 was started by tsits on HP-J,
+Sun Feb 26 12:41:24 2023
+The command was "/cygdrive/c/Program Files (x86)/Prover9-Mace4/bin-win32/prover9".
+============================== end of head ===========================
+
+============================== end of input ==========================
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.00 (+ 0.00) seconds.
+% Length of proof is 11.
+% Level of proof is 4.
+% Maximum clause weight is 8.
+% Given clauses 4.
+
+1 (all x all s all t (In(x,s) & In(x,t) <-> In(x,Intersection(s,t)))) # label(non_clause).  [assumption].
+2 (all s all t all x ((In(x,s) -> In(x,t)) -> SubsetOf(s,t))) # label(non_clause).  [assumption].
+3 (all s all t SubsetOf(Intersection(s,t),s)) # label(non_clause) # label(goal).  [goal].
+4 -SubsetOf(Intersection(c1,c2),c1).  [deny(3)].
+5 In(x,y) | SubsetOf(y,z).  [clausify(2)].
+6 -In(x,y) | SubsetOf(z,y).  [clausify(2)].
+8 In(x,y) | -In(x,Intersection(y,z)).  [clausify(1)].
+10 In(x,Intersection(c1,c2)).  [resolve(4,a,5,b)].
+11 -In(x,c1).  [resolve(4,a,6,b)].
+13 In(x,c1).  [hyper(8,b,10,a)].
+14 $F.  [resolve(13,a,11,a)].
+
+============================== end of proof ==========================

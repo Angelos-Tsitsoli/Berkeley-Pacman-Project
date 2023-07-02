@@ -1,0 +1,282 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[utf8]{inputenc}
+\usepackage[greek, english]{babel}
+\usepackage{alphabeta}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{hyperref}
+% Set page size and margins
+% Replace `letter paper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Απαντήσεις θεωρητικών ερωτήσεων τρίτης εργασίας Τεχνητής Νοημοσύνης }
+\author{ Άγγελος Τσιτσόλη sdi2000200}
+\date{Φεβρουάριος 26, 2022}
+\begin{document}
+\maketitle
+
+\section*{Πρόβλημα 2}
+Ορίζουμε την ερμηνεία Ι που περιέχει τα αντικείμενα της εικόνας , συγκεκριμένα προκύπτει το εξής : \\
+$|I|=\{Yoda\}$ \\
+Η Ι κάνει τις εξής αντιστοιχίσεις :
+$Yoda^{I}=Yoda $ \\
+Οπότε :\\
+Η I αντιστοιχίζει στο μοναδιαίο σύμβολο κατηγορήματος JediMaster την ακόλουθη μοναδιαία σχέση: $\{\langleΥoda\rangle
+\}$ \\ \\
+Γενικότερα όσον αφορά την έννοια της ικανοποίησης ισχύει ότι: $\vDash_{I} (\forall)$φ[s] ανν για κάθε d $\in$ $|I|$ , έχουμε $\vDash_{I}$ φ[s($x|d$)] και ομοίως : $\vDash_{I} (\exists)$φ[s] ανν για κάθε d $\in$ $|I|$ , έχουμε $\vDash_{I}$ φ[s($x|d$)]
+Εξετάζεται παρακάτω αν ικανοποιούνται οι παραπάνω προτάσεις ή όχι :\\ \\
+Για την πρόταση φ1:\\
+Απο ορισμό ικανοποίησης προκύπτει ότι:
+$\vDash_{I} JediMaster(Yoda)[s]$ ισχύει  αν και μόνο αν $\langle \overline{s} (Yoda)\rangle \in JediMaster^{I}$ \\
+Επίσης Έχουμε ότι:\\
+$\overline{s} (Yoda)=Yoda^{I} = Yoda $ και 
+$JediMaster^{I}=\{\langle Yoda \}$ \\
+Επομένως η πρόταση φ1 ικανοποιείται .\\ \\
+Για την πρόταση φ2:\\
+Από τον ορισμό ικανοποίησης προκύπτει ότι ισχύει:\\
+$\vDash_{I} (\exists x)JediMaster(x)[s]$ αν και μόνο αν υπάρχει $d_{x} \in |I|$ \\ όπου ισχύει $\vDash_{I} JediMaster(x)[s(x|dx)]$ αν και μόνο αν υπάρχει $d_{x} \in |I|$ \\ Δεδομένου ότι $|I|=\{Yoda\}$ υπάρχει μία περίπτωση όσον αφορά την ανάθεση μεταβλητών .Ουσιαστικά στην μεταβλητή x ανατίθεται η τιμή Yoda.Άρα ισχύει ότι $\vDash_{I} JediMaster(x)[s(x|dx)]$ εφόσον $\langle {s(x|Yoda)} \rangle=\langle {Yoda} \rangle \in JediMaster^{I}$ Άρα ικανοποιείται η φ2.\\\\
+Για την πρόταση φ3:\\
+Απο τον ορισμό ικανοποίησης προκύπτει ότι : \\
+$\vDash_{I} (\forall x)(JediMaster(x))[s]$ που ισχύει αν και μόνο αν για κάθε $d_{x} \in |I|$ \\
+$\vDash_{I} JediMaster(x)[s(x|dx)]$ που ισχύει αν και μόνο αν για κάθε $d_{x} \in |I|$  \\
+Δεδομένου ότι $|I|=\{Yoda\}$ υπάρχει μία περίπτωση όσον αφορά την ανάθεση μεταβλητών.Ουσιαστικά στην μεταβλητή x ανατίθεται η τιμή Yoda.Άρα ισχύει ότι $\vDash_{I} JediMaster(x)[s(x|dx)]$ εφόσον $\langle {s(x|Yoda)} \rangle=\langle {Yoda} \rangle \in JediMaster^{I}$ Άρα ικανοποιείται η φ3.\\\\
+\section*{Πρόβλημα 3}
+Σύμφωνα με τον αλγόριθμο ενοποίησης θα εξετάσουμε για τα παρακάτω αν υπάρχει έναν γενικό ενοποιητή: 
+
+\begin{enumerate}
+    \item P(x,y) και P(G(F(v)),G(u)) ,
+    ενοποιητής: $\{u/F(v),x/P(G(F(v)))\} $
+    \item $P(x_{1},G(x_{2},x_{3}),x_{2},B)$ και $P(G(H(A,x_{5}),x_{2}),x_{1},H(A,x_{4}),x_{4})$ \\ , ενοποιητής : $\{x_{1} / G(H(A,B),H(A,B)), x_{2}/H(A,B) , x_{3} /H(A,B) , x_{5}/B , x_{4}/B \}$
+    \item $P(x_{1},x_{2},.....,x_{n},F(y_{0},y_{0}),......,F(y_{n-1},y_{n-1}),y_{n})$ και $P(F(x_{0},x_{0}),F(x_{1},x_{1}),.....,F(x_{n-1},x_{n-1}),y_{1},.......,y_{n},x_{n})$ \\ ενοποιητής : \\$\{ x_{1} / F(x_{0},x{0}),x_{2}/F(F(x_{0},x_{0}),F(x_{0},x_{0}))$ \\$,x_{3}/F(F(F(x_{0},x_{0}),F(x_{0},x_{0}))),......,x_{n} /F(F(F(F....F(F(x_{0},x_{0}),F(x_{0},x_{0})),y_{1} /$ \\ $F(y_{0},y{0}),y_{2}/F(F(y_{0},y_{0}),F(y_{0},y_{0})),......,$\\$y_{n} /F(F(F(F....F(F(y_{0},y_{0}),F(y_{0},y_{0})),F(F(F(F....F(F(x_{0},x_{0}),F(x_{0},x_{0}))/F(F(F(F....F(F(y_{0},y_{0}),F(y_{0},y_{0}))\}$ \\
+\end{enumerate}
+
+\section*{Πρόβλημα 4}
+\begin{enumerate}
+    \item Ο Κυριάκος, ο Αλέξης και ο Νίκος είναι μέλη του πολιτικού κόμματος ΚΟΡΩΝΑ. Πρώτης Τάξης Λογική : \\ ΜέλοςΚόμματοςΚορόνα(Νίκος) $\wedge$ ΜέλοςΚόμματοςΚορόνα(Κυριάκος) $\wedge$ ΜέλοςΚόμματοςΚορόνα(Αλέξης)
+    \item Κάθε μέλος του κόμματος ΚΟΡΩΝΑ που δεν είναι δεξιός, είναι φιλελεύθερος. Πρώτης Τάξης Λογική : \\ $\forall x $[ΜέλοςΚόμματοςΚορόνα(x)$\wedge$ $\neg$ Δεξιός(x)$ =>$ Φιλελευθερος(x)]
+    \item Στους δεξιούς δεν αρέσει ο σοσιαλισμός. Πρώτης Τάξης Λογική : $\forall x $[Δεξιος(x)$=>$ $\ \neg$ Αρέσει(x,σοσιαλισμός) ]
+    \item Σ’ όποιον δεν αρέσει ο καπιταλισμός, δεν είναι φιλελεύθερος. Πρώτης Τάξης Λογική : \\ $\forall x $[$\neg$ Αρέσει(x,καπιταλισμός)$=>\neg$ Φιλελευθερος(x)]
+    \item Στον Κυριάκο δεν αρέσει ό,τι αρέσει στον Αλέξη, και του αρέσει ό,τι δεν αρέσει στον Αλέξη. Πρώτης Τάξης Λογική : \\ $\forall x $ (Αρέσει(Κυριάκος,x)$\iff \neg$ Αρέσει(Αλέξης,x))$\wedge \forall y $ ($\neg$Αρέσει(Κυριάκος,y)$<=> $Αρέσει(Αλέξης,y))
+    \item Στο Αλέξη αρέσει ο σοσιαλισμός και ο καπιταλισμός. Πρώτης Τάξης Λογική : \\Αρέσει(Αλέξης,σοσιαλισμός)$\wedge$Αρέσει(Αλέξης,καπιταλισμός)
+    \item Υπάρχει ένα μέλος του κόμματος ΚΟΡΩΝΑ που είναι φιλελεύθερος αλλά δεν είναι δεξιός. $\exists x $ [ΜέλοςΚόμματοςΚορόνα(x)$\wedge$Φιλελεύθερος(x)$\wedge \neg$ Δεξιός(x)]
+
+    
+\end{enumerate}
+KB: αποτελούν οι παραπάνω προτάσεις εκτός απο την τελευταία που θα ονομαστεί φ πρόταση \\ \\
+φ:$\exists x $ [ΜέλοςΚόμματοςΚορόνα(x)$\wedge$Φιλελεύθερος(x)$\wedge \neg$ Δεξιός(x)]\\ \\
+Προκειμένου να δείξουμε ότι KB $\vDash$ φ , αρκεί να δείξουμε ότι KB$\wedge \neg$φ.\\ \\
+\textbf{Σύμφωνα με την ιδιότητα $\neg \forall = \exists$:}\\ 
+$\neg$φ= $\forall x $($\neg$ΜέλοςΚόμματοςΚορόνα(x) $\vee \neg$Φιλελευθερος(x) $\vee$ Δεξιός(x))\\ \\
+Στην συνέχεια θα ακολουθήσει η μετατροπή σε CNF με βήματα προκειμένου να προχωρήσουμε στην μέθοδο της ανάλυσης: \\ \\
+1)Στην παρακάτω πρόταση απαλείφουμε τις ισοδυναμίες που υπάρχουν :\\ \\
+α) Η  $\forall x $ (Αρέσει(Κυριάκος,x)$\iff \neg$ Αρέσει(Αλέξης,x))$\wedge \forall y $ ($\neg$Αρέσει(Κυριάκος,y)$\iff $Αρέσει(Αλέξης,y)) θα μετατραπεί στην λογική έκφραση $\forall x $ (Αρέσει(Κυριάκος,x)$\Rightarrow \neg$ Αρέσει(Αλέξης,x)$\wedge $ $\neg$ Αρέσει(Αλέξης,x)$\Rightarrow$ Αρέσει(Κυριάκος,x))$\forall y $ ($\neg$Αρέσει(Κυριάκος,y)$\Rightarrow $Αρέσει(Αλέξης,y)$\wedge$ Αρέσει(Αλέξης,y) $\Rightarrow$ $\neg$Αρέσει(Κυριάκος,y)) \\ \\
+2) Στις παρακάτω προτάσεις απαλείφουμε την συνεπαγωγή όπου υπάρχει δηλαδή:\\  \\
+α)Η $\forall x $[ΜέλοςΚόμματοςΚορόνα(x)$\wedge$ $\neg$ Δεξιός(x)$ \Rightarrow$ Φιλελευθερος(x)] θα μετατραπεί σε : $\forall x $[($\neg$ ΜέλοςΚόμματοςΚορόνα(x)$\vee$  Δεξιός(x)$ \vee$ Φιλελευθερος(x))] \\ \\
+β) Η $\forall x $[Δεξιος(x)$=>$ $\ \neg$ Αρέσει(x,σοσιαλισμός) ] θα μετατραπεί σε $\forall x [\neg$ Δεξιός(x) $\lor \neg$ Αρέσει(x,σοσιαλισμός)] \\ \\
+γ)Η $\forall x $[$\neg$ Αρέσει(x,καπιταλισμός)$=>\neg$ Φιλελευθερος(x)] θα μετατραπεί στην $\forall x$ [Αρέσει(x,καπιταλισμός) $\vee \neg$ Φιλελευθερος(x)] \\\\
+δ)Η $\forall x $ (Αρέσει(Κυριάκος,x)$\Rightarrow \neg$ Αρέσει(Αλέξης,x)$\wedge $ $\neg$ Αρέσει(Αλέξης,x)$\Rightarrow$ Αρέσει(Κυριάκος,x)) $\wedge$ $\forall y $ ($\neg$Αρέσει(Κυριάκος,y)$\Rightarrow $Αρέσει(Αλέξης,y)$\wedge$ Αρέσει(Αλέξης,y) $\Rightarrow$ $\neg$Αρέσει(Κυριάκος,y)) θα μετατραπεί σε $\forall x $ ($\neg$Αρέσει(Κυριάκος,x)$\vee \neg$Αρέσει(Αλέξης,x) $\wedge$  Αρέσει(Αλέξης,x)$\vee$ $\neg $ Αρέσει(Κυριάκος,x)) \\ $\wedge$ $\forall y$ (Αρέσει(Κυριάκος,y)$\vee $Αρέσει(Αλέξης,y)$\wedge$ $\neg$Αρέσει(Αλέξης,y) $\vee$ $\neg$Αρέσει(Κυριάκος,y)) \\ \\
+3)Προτυποποίηση Μεταβλητών \\ \\
+Η $\forall x $[($\neg$ ΜέλοςΚόμματοςΚορόνα(x)$\vee$  Δεξιός(x)$ \vee$ Φιλελευθερος(x))] θα μετατραπεί σε $\forall x1 $[($\neg$ ΜέλοςΚόμματοςΚορόνα(x1)$\vee$  Δεξιός(x1)$ \vee$ Φιλελευθερος(x1))] \\ \\
+Η $\forall x [\neg$ Δεξιός(x) $\lor \neg$ Αρέσει(x,σοσιαλισμός)] θα μετατραπεί σε $\forall x2 [\neg$ Δεξιός(x2) $\lor \neg$ Αρέσει(x2,σοσιαλισμός)] \\ \\
+Η $\forall x$ [Αρέσει(x,καπιταλισμός) $\vee \neg$ Φιλελευθερος(x)] θα μετατραπεί σε $\forall x3$ [Αρέσει(x3,καπιταλισμός) $\vee \neg$ Φιλελευθερος(x3)] \\ \\ 
+Η $\forall x $ ($\neg$Αρέσει(Κυριάκος,y)$\vee \neg$Αρέσει(Αλέξης,y) $\wedge$  Αρέσει(Αλέξης,x)$\vee$ $\neg $ Αρέσει(Κυριάκος,x)) \\ $\wedge$ $\forall y$ (Αρέσει(Κυριάκος,y)$\vee $Αρέσει(Αλέξης,y)$\wedge$ $\neg$Αρέσει(Αλέξης,y) $\vee$ $\neg$Αρέσει(Κυριάκος,y)) θα μετατραπεί σε $\forall x4 $ ($\neg$Αρέσει(Κυριάκος,x4)$\vee \neg$Αρέσει(Αλέξης,x4) $\wedge$  Αρέσει(Αλέξης,x4)$\vee$ $\neg $ Αρέσει(Κυριάκος,x4)) \\ $\wedge$  $\forall y1$ (Αρέσει(Κυριάκος,y1)$\vee $Αρέσει(Αλέξης,y1)$\wedge$ $\neg$Αρέσει(Αλέξης,y1) $\vee$ $\neg$Αρέσει(Κυριάκος,y1))\\ \\ 
+Η  $\forall x $($\neg$ΜέλοςΚόμματοςΚορόνα(x) $\vee \neg$Φιλελευθερος(x) $\vee$ Δεξιός(x)) θα μετατραπεί σε  $\forall x5 $($\neg$ΜέλοςΚόμματοςΚορόνα(x5) $\vee \neg$Φιλελευθερος(x5) $\vee$ Δεξιός(x5)) 
+\\ \\4) Τελική μορφή CNF (σύζευξη διαζευτικών προτάσεων ) και αφαίρεση ποσοδεικτών: \\ \\
+Η  ΜέλοςΚόμματοςΚορόνα(Νίκος) $\wedge$ ΜέλοςΚόμματοςΚορόνα(Κυριάκος) $\wedge$ ΜέλοςΚόμματοςΚορόνα(Αλέξης) βρίσκεται ήδη σε CNF μορφή . \\ \\
+Αφαιρούμε τον ποσοδείκτη οπότε προκύπτει : [($\neg$ ΜέλοςΚόμματοςΚορόνα(x)$\vee$  Δεξιός(x))$ \vee$ Φιλελευθερος(x)] \\ \\
+Αφαιρούμε τον ποσοδείκτη οπότε προκύπτει : [$\neg$ Δεξιός(x) $\lor \neg$ Αρέσει(x,σοσιαλισμός)] \\ \\
+Αφαιρούμε τον ποσοδείκτη οπότε προκύπτει : [Αρέσει(x,καπιταλισμός) $\vee \neg$ Φιλελευθερος(x)] \\ \\
+Αφαιρούμε τον ποσοδείκτη οπότε προκύπτει :
+( ($\neg$Αρέσει(Κυριάκος,x4)$\vee \neg$Αρέσει(Αλέξης,x4) $\wedge$  Αρέσει(Αλέξης,x4)$\vee$ $\neg $ Αρέσει(Κυριάκος,x4)) \\  $\wedge$  (Αρέσει(Κυριάκος,y1)$\vee $Αρέσει(Αλέξης,y1)$\wedge$ $\neg$Αρέσει(Αλέξης,y1) $\vee$ $\neg$Αρέσει(Κυριάκος,y1)) \\ \\ 
+Είναι ήδη σε CNF μορφή : \\Αρέσει(Αλέξης,σοσιαλισμός)$\wedge$Αρέσει(Αλέξης,καπιταλισμός) \\ \\ 
+Αφαιρούμε τον ποσοδείκτη οπότε προκύπτει :\\
+$\neg$ΜέλοςΚόμματοςΚορόνα(x)$\wedge$ $\neg$Φιλελεύθερος(x)$\wedge$  Δεξιός(x) \\ \\
+Επομένως εκτελούμε ανάλυση μεταξύ των παρακάτω :\\
+ΜέλοςΚόμματοςΚορόνα(Νίκος)\\
+ΜέλοςΚόμματοςΚορόνα(Κυριάκος)\\
+ΜέλοςΚόμματοςΚορόνα(Αλέξης)\\
+$\neg$ΜέλοςΚόμματοςΚορόνα(x)$\vee$  Δεξιός(x))$ \vee$ Φιλελευθερος(x)\\
+$\neg$ Δεξιός(x) $\lor \neg$ Αρέσει(x,σοσιαλισμός)\\
+Αρέσει(x,καπιταλισμός) $\vee$  $\neg$ Φιλελευθερος(x)\\
+$\neg$Αρέσει(Κυριάκος,y)$\vee \neg$Αρέσει(Αλέξης,y))\\
+(Αρέσει(Αλέξης,y)$\vee \neg$ Αρέσει(Κυριάκος,y))\\
+Αρέσει(Κυριάκος,y)$\vee $Αρέσει(Αλέξης,y)\\
+$\neg$Αρέσει(Κυριάκος,y)$\vee \neg $Αρέσει(Αλέξης,y)\\
+Αρέσει(Αλέξης,σοσιαλισμός)\\
+Αρέσει(Αλέξης,καπιταλισμός)\\ \\
+Οπότε παίρνουμε την άρνηση ατού που θέλουμε να αποδείξουμε δηλαδη το : ($\neg$ΜέλοςΚόμματοςΚορόνα(x) $\vee \neg$Φιλελευθερος(x) $\vee$ Δεξιός(x)) και εκτελούμε απαλοιφές με τα στοιχεία της ΚΒ μας.\\ \\
+Εκτελούμε απαλοιφή μεταξύ των ΜέλοςΚόμματοςΚορόνα(Νίκος) και για $\{Νίκος/x\} $  της ($\neg$ΜέλοςΚόμματοςΚορόνα(x) $\vee \neg$Φιλελευθερος(x) $\vee$ Δεξιός(x))  οπότε μένει $\neg$Φιλελευθερος(x) $\vee$ Δεξιός(x)\\ \\
+Έπειτα εκτελούμε απαλοιφή μεταξύ των \\ \\ 
+Εκτελούμε απαλοιφή μεταξύ των $\neg$Φιλελευθερος(x) $\vee$ Δεξιός(x) και $\neg$ΜέλοςΚόμματοςΚορόνα(x)$\vee$  Δεξιός(x))$ \vee$ Φιλελευθερος(x) και απομένει η  $\neg$ΜέλοςΚόμματοςΚορόνα(x)$\vee$  Δεξιός(x)). \\ \\ 
+Εκτελούμε απαλοιφή μεταξύ των $\neg$ΜέλοςΚόμματοςΚορόνα(x)$\vee$  Δεξιός(x)) και για $\{Κυριάκος/x\} $ την  ΜέλοςΚόμματοςΚορόνα(Κυριάκος). Οπότε μένει η Δεξιός(x).\\ \\ 
+Εκτελούμε απαλοιφή στις Δεξιός(x) και $\neg$ Δεξιός(x) $\lor \neg$ Αρέσει(x,σοσιαλισμός) , οπότε μένει η $\neg$Αρέσει(x,σοσιαλισμός) \\ Εκτελούμε απαλοιφή μεταξύ των $\neg$Αρέσει(x,σοσιαλισμός) και για $\{Αλέξης/x\} $ την Αρέσει(Αλέξης,σοσιαλισμός). Oπότε καταλήγουμε σε κενό άρα αποδείχθηκε αυτό που θέλαμε .
+
+
+
+
+\section*{Πρόβλημα 5}
+Για την μετατροπή των προτάσεων σε μορφή CNF ακολουθούμε τα παρακάτω βήματα : \\ \\
+A:$(\forall x)(\forall s)(\forall t)(In(x,s)\wedge In(x,t) <=>In(x,Intersection(s,t)))$ \\ \\
+\textbf{Απαλοίφουμε την ισοδυναμία οπότε προκύπτει} :\\
+$(\forall x)(\forall s)(\forall t)(In(x,s)\wedge In(x,t) =>In(x,Intersection(s,t)))\wedge$$(In(x,Intersection(s,t)=>(In(x,s)\wedge In(x,t)))$ \\ \\
+\textbf{Απαλοίφουμε τις συνεπαγωγή} :\\ $(\forall x)(\forall s)(\forall t)(\neg In(x,s)\vee \neg In(x,t) \vee In(x,Intersection(s,t)))\wedge$$(\neg In(x,Intersection(s,t) \vee (In(x,s)\wedge In(x,t)))$  \\ \\
+\textbf{Προτυποποίηση Μεταβλητών} Σύμφωνα με τις διαφάνειες 
+ $(\forall x)(\forall s)(\forall t)(\neg In(x,s)\vee \neg In(x,t) \vee In(x,Intersection(s,t)))\wedge$$(\neg In(x,Intersection(s,t) \vee (In(x,s)\wedge In(x,t)))$ \\ \\
+\textbf{Απαλοίφουμε τους ποσοδείκτες} : $(\neg In(x,s)\vee \neg In(x,t) \vee In(x,Intersection(s,t)))\wedge$$(\neg In(x,Intersection(s,t) \vee (In(x,s)\wedge In(x,t)))$  \\ \\ 
+\textbf{Eκτελούμε την ιδιότητα (α $\vee$ (β $\wedge$ γ)) = ((α $\vee$ β) $\wedge$ (α $\vee$ γ)) στο τέλος της πρότασης}Οπότε :\\
+$(\neg In(x,s)\vee \neg In(x,t) \vee In(x,Intersection(s,t)))\wedge(\neg In(x,Intersection(s,t)\vee In(x,s) ))\wedge (In(x,Intersection(s,t) \vee In(x,t)))$\\ \\
+Ομοίως: \\ 
+B:$(\forall s)(\forall t)((\forall x)In(x,s)=>In(x,t))=>SubsetOf(s,t) $\\ \\
+\textbf{Απαλοίφουμε τις συνεπαγωγές} : $(\forall s)(\forall t)((\forall x)In(x,s)\Rightarrow In(x,t))\Rightarrow SubsetOf(s,t) $ θα γίνει $(\forall s)(\forall t)( (\forall x)\neg In(x,s)\vee In(x,t))\Rightarrow SubsetOf(s,t) $ Έπειτα θα έχουμε : $(\forall s)(\forall t)( \neg ((\forall x)\neg In(x,s)\vee In(x,t)))\Rightarrow SubsetOf(s,t) $ Έπειτα : $(\forall s)(\forall t)( (\exists x) In(x,s)\wedge \neg In(x,t))\vee SubsetOf(s,t) $\\ \\
+\textbf{Προτυποποίηση Μεταβλητών}
+$(\forall s)(\forall t)( (\exists x) In(x1,s)\wedge \neg In(x,t))\vee SubsetOf(s,t) $\\ \\
+\textbf{Απαλοίφουμε τους ποσοδείκτες οπότε} :$(  In(F_{1}(x,s),s)\wedge \neg In(F_{1}(x,s),t))\vee SubsetOf(s,t) $\\ \\ \\
+\textbf{Eκτελούμε την ιδιότητα (α $\vee$ (β $\wedge$ γ)) = ((α $\vee$ β) $\wedge$ (α $\vee$ γ))} Οπότε έχουμε : \\ (In($F_{1}$(x,s),s) $\vee$ SubsetOf(s,t)) $\wedge$ ($\neg$In(F$_{1}$(x,s),t) $\vee$ SubsetOf(s,t)) \\
+\\ C:$(\forall s)(\forall t)$SubsetOf(Intersection(s,t),s)\\ \\
+\textbf{Η άρνηση θα είναι :}\\ 
+$\neg$(($\forall s)(\forall t)$SubsetOf(Intersection(s,t),s))\\ \\
+\textbf{Σύμφωνα με την ιδιότητα $\neg \forall = \exists$:}\\ 
+Έχουμε το εξής: (($\exists s)(\exists t)$$\neg$SubsetOf(Intersection(s,t),s))\\ \\
+\textbf{Επίσης σύμφωνα με την θεωρία εφόσον οι μεταβλητές x,t δεν είναι ελεύθερες τότε ($\exists$x)φ =φ} \\Έχουμε : 
+\\Απαλοίφουμε τους ποσοδείκτες\\
+$\neg SubsetOf(Intersection(s,t),s)$ \\ \\ 
+\textbf{Οι προτάσεις που θα χρησιμοποιήσουμε προκειμένου να αποδείξουμε την πρόταση C θα είναι οι εξής:} \\
+(In($F_{1}$(x,s),s) $\vee$ SubsetOf(s,t))\\
+($\neg$In(F$_{1}$(x,s),t) $\vee$ SubsetOf(s,t))\\
+$(\neg In(x,s)\vee \neg In(x,t) \vee In(x,Intersection(s,t)))\\
+(\neg In(x,Intersection(s,t)\vee In(x,s) ))\\
+(In(x,Intersection(s,t) \vee In(x,t)))$ \\
+\textbf{Η πρώτη απαλοιφή }\\
+Μεταξύ της πρώτης πρότασης της ΚΒ Για $\{s/Intersection(s,t) \}$ και $\{t/s \}$ τότε θα προκύψει απο την απαλοιφή το εξής: In($F_{1}$(x,s),s) \\
+Επομένως η πρόταση αυτή απαλοίφεται με την δεύτερη και προκύπτει η : SubsetOf(s,t) . \\
+Έπειτα 
+    
+\section*{Πρόβλημα 6}
+Έγινε χρήση του εργαλείου:https://swish.swi-prolog.org/
+\\ \\Το αρχείο περιλαμβάνεται στο tar.gz αρχείο που θα παραδωθεί η εργασία αλλά σε κάθε περίπτωση το περιεχόμενο του είναι αυτό:\\ \\
+\input{swish.pl}
+Τα αποτελέσματα των ερωτήσεων είναι τα εξής:\\ \\
+\textbf{Να σημειωθεί ότι:}\\
+Κάθε φορά που έκανα μια ερώτηση πάταγα το κουμπί next ώστε να βγάζει και άλλα αποτελέσματα μέχρι να εμφανιστεί \textbf{false} , δηλαδή να μην προκύπτει άλλο αποτέλεσμα. \\ \\ \\
+\includegraphics[width=500]{happy.png}\\ \\
+\includegraphics[width=500]{likes.png}\\ \\
+\section*{Πρόβλημα 7}
+\textbf{Σημαντικό:}\\
+Τα αρχεία εισόδου και εξόδου συμπεριλαμβάνονται στο tar.gz αρχείο παράδοσης αλλά σε κάθε περίπτωση αναφέρονται και παρακάτω. \\ \\
+\textbf{Άσκηση 4}:\\
+\textbf{Assumptions}:\\ 
+Memberofcorona(Nikos)&Memberofcorona(Kyriakos)&Memberofcorona(Alexis).\\
+all x (Memberofcorona(x)&-Right(x)$\Rightarrow$Liberal(x)).\\
+all x (Right(x)$\Rightarrow$-Likes(x,socialism)).\\
+all x (-Likes(x,capitalism)$\Rightarrow$-Liberal(x)).\\
+all x (Likes(Kyriakos,x)$\iff$-Likes(Alexis,x))&all y(-Likes(Kyriakos,y)$\iff$Likes(Alexis,y)).\\
+Likes(Alexis,socialism)&Likes(Alexis,capitalism).\\
+\textbf{Goals}:\\
+exists x (Memberofcorona(x)&Liberal(x)&-Right(x)).\\
+\textbf{Result}:\\
+$==============================$ prooftrans $============================$
+Prover9 (32) version Dec-2007, Dec 2007.\\
+Process 21860 was started by tsits on HP-J,\\
+Sun Feb 26 10:34:12 2023\\
+The command was "/cygdrive/c/Program Files (x86)/Prover9-Mace4/bin-win32/prover9".\\
+$============================== $end of head $===========================$ \\
+$============================= $end of input $==========================$\\
+$==============================$ PROOF $=================================$\\
+$\%$ -------- Comments from original proof -------- \\
+$\%$ Proof 1 at 0.00 (+ 0.03) seconds.\\
+$\%$ Length of proof is 16.\\
+$\%$ Level of proof is 5.\\
+$\%$ Maximum clause weight is 3.\\
+$\%$ Given clauses 0.\\
+1 Memberofcorona(Nikos) & Memberofcorona(Kyriakos) & Memberofcorona(Alexis) # label(non$\_$clause).  [assumption].\\
+2 (all x (Memberofcorona(x) & -Right(x) $\Rightarrow$ Liberal(x))) # label(non$\_$clause).  [assumption].\\
+3 (all x (Right(x) $\Rightarrow$ -Likes(x,socialism))) # label(non$\_$clause).  [assumption].\\
+6 Likes(Alexis,socialism) & Likes(Alexis,capitalism) # label(non$\_$clause).  [assumption].\\
+7 (exists x (Memberofcorona(x) & Liberal(x) & -Right(x))) # label(non$\_$clause) # label(goal).  [goal].\\
+8 -Memberofcorona(x) | Right(x) | Liberal(x).  [clausify(2)].\\
+11 Memberofcorona(Alexis).  [clausify(1)].\\
+12 -Memberofcorona(x) | -Liberal(x) | Right(x).  [deny(7)].\\
+14 -Right(x) | -Likes(x,socialism).  [clausify(3)].\\
+16 Right(Alexis) | Liberal(Alexis).  [resolve(8,a,11,a)].\\
+19 -Liberal(Alexis) | Right(Alexis).  [resolve(12,a,11,a)].\\
+23 Liberal(Alexis) | -Likes(Alexis,socialism).  [resolve(16,a,14,a)].\\
+26 -Liberal(Alexis) | -Likes(Alexis,socialism).  [resolve(19,b,14,a)].\\
+29 Likes(Alexis,socialism).  [clausify(6)].\\
+38 -Likes(Alexis,socialism) | -Likes(Alexis,socialism).  [resolve(26,a,23,a)].\\
+39 $\$F$.  [copy(38),merge(b),unit$\_$del(a,29)].\\
+$==============================$ end of proof $==========================$  \\ 
+\textbf{Άσκηση 5} :\\
+\textbf{Assumptions}:\\ 
+all x all s all t (In(x,s)&In(x,t)$\iff$In(x,Intersection(s,t))).\\
+all s all t all x((In(x,s)$\Rightarrow$In(x,t))$\Rightarrow$ SubsetOf(s,t)).\\
+\textbf{Goals}:\\
+all s all t (SubsetOf(Intersection(s,t),s)).\\
+\textbf{Result}:\\
+$==============================$ prooftrans $============================$\\
+Prover9 (32) version Dec-2007, Dec 2007.\\
+Process 25816 was started by tsits on HP-J,\\
+Sun Feb 26 11:27:01 2023\\
+The command was "/cygdrive/c/Program Files (x86)/Prover9-Mace4/bin-win32/prover9".\\
+$==============================$ end of head $===========================$\\
+$==============================$ end of input $==========================$\\
+$==============================$ PROOF $=================================$\\
+$\%$ -------- Comments from original proof --------\\
+$\%$ Proof 1 at 0.00 (+ 0.00) seconds.\\
+$\%$ Length of proof is 11.\\
+$\%$ Level of proof is 4.\\
+$\%$ Maximum clause weight is 8.\\
+$\%$ Given clauses 4.\\
+1 (all x all s all t (In(x,s) & In(x,t) $\iff$ In(x,Intersection(s,t)))) # label(non$\_$clause).  [assumption].\\
+2 (all s all t all x ((In(x,s) $\Rightarrow$ In(x,t)) $\Rightarrow$ SubsetOf(s,t))) # label(non$\_$clause).  [assumption].\\
+3 (all s all t $SubsetOf$(Intersection(s,t),s)) # label(non$\_$clause) # label(goal).  [goal].\\
+4 -SubsetOf(Intersection(c1,c2),c1).  [deny(3)]. \\
+5 In(x,y) | SubsetOf(y,z).  [clausify(2)]. \\
+6 -In(x,y) | SubsetOf(z,y).  [clausify(2)].\\
+8 In(x,y) | -In(x,Intersection(y,z)).  [clausify(1)].\\
+10 In(x,Intersection(c1,c2)).  [resolve(4,a,5,b)].\\
+11 -In(x,c1).  [resolve(4,a,6,b)].\\
+13 In(x,c1).  [hyper(8,b,10,a)].\\
+14 \$F.  [resolve(13,a,11,a)].\\
+============================== end of proof ==========================
+
+\section*{Πρόβλημα 8}
+α)\\ \\
+Σύμφωνα με τις διαφάνειες \\ \\
+SubsetOf(Country, Administrative Unit) \\\\
+SubsetOf(Decentralized Administration, Administrative Unit) \\\\
+SubsetOf(Region, Administrative Unit) \\\\
+SubsetOf(Regional Unit, Administrative Unit) \\ \\
+SubsetOf(Municipality, Administrative Unit) \\ \\
+SubsetOf(Municipality Unity, Administrative Unit) \\ \\
+SubsetOf(Municipal Community, Administrative Unit) \\ \\
+SubsetOf(Local Community, Administrative Unit) \\ \\
+
+
+\section*{Πρόβλημα 10}
+Ο Γιάννης, η Μαρία, ο Γιώργος και η Ελένη είναι τα μοναδικά μέλη του συνδέσμου
+“Γάβροι όλου του κόσμου ενωθείτε”. FOL : $\forall x $(Γάβροιόλουτουκόσμου(x)$\iff $(x=Γιάννης $\vee$ x=Μαρία $\vee$ x=Γιώργος $\vee$ x=Ελένη)) \\ \\ 
+Ο Γιάννης είναι σύζυγος της Μαρίας. FOL: Σύζυγος(Γιάννης,Μαρία)\\ \\
+Ο Γιώργος είναι αδερφός της Ελένης. FOL: Αδερφός(Γιώργος,Ελένης) \\ \\
+Ο σύζυγος ή η σύζυγος κάθε μέλους ενός συνδέσμου είναι
+επίσης μέλος του συνδέσμου αυτού. FOL: $(\forall x) (\forall y) $(Μέλοςσυνδέσμου(x)$\wedge$ Σύζυγος(x,y)$=>$Μέλοςσυνδέσμου(y)$\vee$\\ Μέλοςσυνδέσμου(y)$\wedge$ Σύζυγος(y,x)$=>$Μέλοςσυνδέσμου(x)) \\ \\
+\textbf{CNF FORM}\\
+Για την πρόταση $\forall x $(Γάβροιόλουτουκόσμου(x)$\iff $(x=Γιάννης $\vee$ x=Μαρία $\vee$ x=Γιώργος $\vee$ x=Ελένη)) προκειμένου να μετατραπεί σε CNF κάνουμε το εξής :\\ 
+1)Απαλοίφουμε την ισοδυναμία οπότε προκύπτει : \\
+$\forall x $(Γάβροιόλουτουκόσμου(x)$ => $(x=Γιάννης $\vee$ x=Μαρία $\vee$ x=Γιώργος $\vee$ x=Ελένη) $\wedge $(x=Γιάννης $\vee$ x=Μαρία $\vee$ x=Γιώργος $\vee$ x=Ελένη)$=>$ (Γάβροιόλουτουκόσμου(x))\\
+2)Απαλοίφουμε την συνεπαγωγή:\\
+$\forall x $($\neg$Γάβροιόλουτουκόσμου(x)$ \vee $(x=Γιάννης $\vee$ x=Μαρία $\vee$ x=Γιώργος $\vee$ x=Ελένη) $\wedge $($\neg$x=Γιάννης $\wedge \neg$ x=Μαρία $\wedge \neg$ x=Γιώργος $\wedge \neg$ x=Ελένη)$\vee$ (Γάβροιόλουτουκόσμου(x))\\
+3)Σύμφωνα με την ιδιότητα :\\
+Η πρόταση Σύζυγος(Γιάννης,Μαρία) είναι ήδη σε μορφή CNF.\\ \\
+Η πρόταση Αδερφός(Γιώργος,Ελένης) είναι ήδη σε μορφή CNF.\\
+
+Η πρόταση $(\forall x) (\forall y) $(Μέλοςσυνδέσμου(x)$\wedge$ Σύζυγος(x,y)$=>$Μέλοςσυνδέσμου(y)$\vee$\\ Μέλοςσυνδέσμου(y)$\wedge$ Σύζυγος(y,x)$=>$Μέλοςσυνδέσμου(x)) μετά την απαλοιφή της ισοδυναμίας θα γίνει 
+
+
+\end{document}
