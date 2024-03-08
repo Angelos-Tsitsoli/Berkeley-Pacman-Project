@@ -3,5 +3,5 @@
 
 1. First Project : 25/25
 2. Second Project : 25/25
-3. Third Project : 25/25 
-4. Fourth Project : 25/25
+3. Third Project : 26/26 
+4. Fourth Project : 26/26
